@@ -18,7 +18,8 @@
     "videogular": "^1.4.4",
     "videogular-controls": "^1.4.4",
     "videogular-themes-default": "^1.4.4",
-    "angular-recursion": "^1.0.5"
+    "angular-recursion": "^1.0.5",
+    "angular-pdf-viewer": "^0.2.13"
   },
   "overrides": {
     "highlightjs": {

@@ -9,7 +9,8 @@
     'hljs',
     'ngJsonExplorer',
     'ngSanitize',
-    'RecursionHelper'
+    'RecursionHelper',
+	'pdf'
   ]);
 
 }());
@@ -490,7 +491,9 @@
         type = 'xml';
       } else if (/^(audio|image|text|video|xml)\//.test(contentType)) {
         type = contentType.split('/')[0];
-      } else if (/^application\//.test(contentType)) {
+      }else if (/^application\/pdf/.test(contentType)) {
+        type = 'pdf';
+      }  else if (/^application\//.test(contentType)) {
         // TODO
       }
       return type;
@@ -767,7 +770,10 @@ module.run(['$templateCache', function($templateCache) {
     '            <hljs hljs-source="data"></hljs>\n' +
     '          </div>\n' +
     '        </div>\n' +
-    '\n' +
+    '		\n' +
+    '		<!-- pdf -->\n' +
+    '		\n' +
+    '		<pdf-viewer ng-if="fileType === \'pdf\' && uri" delegate-handle="my-pdf-container" url="uri" scale="1" show-toolbar="true" headers=""></pdf-viewer>\n' +
     '        <!-- other -->\n' +
     '        <view-object class="source" ng-if="fileType === \'other\' && uri" data="uri" type="contentType">\n' +
     '          <a ng-show="downloadUri" class="btn btn-default" ng-href="{{downloadUri}}">Download</a>\n' +

@@ -57,7 +57,9 @@
         type = 'xml';
       } else if (/^(audio|image|text|video|xml)\//.test(contentType)) {
         type = contentType.split('/')[0];
-      } else if (/^application\//.test(contentType)) {
+      }else if (/^application\/pdf/.test(contentType)) {
+        type = 'pdf';
+      }  else if (/^application\//.test(contentType)) {
         // TODO
       }
       return type;

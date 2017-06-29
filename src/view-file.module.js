@@ -9,7 +9,8 @@
     'hljs',
     'ngJsonExplorer',
     'ngSanitize',
-    'RecursionHelper'
+    'RecursionHelper',
+	'pdf'
   ]);
 
 }());

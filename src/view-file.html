@@ -102,7 +102,15 @@
             <hljs hljs-source="data"></hljs>
           </div>
         </div>
-
+		
+		<!-- pdf -->
+		
+		<pdf-viewer ng-if="fileType === 'pdf' && uri"
+			delegate-handle="my-pdf-container"
+			url="uri"
+			scale="1"
+			show-toolbar="true"
+			headers=""></pdf-viewer>
         <!-- other -->
         <view-object class="source" ng-if="fileType === 'other' && uri" data="uri" type="contentType">
           <a ng-show="downloadUri" class="btn btn-default" ng-href="{{downloadUri}}">Download</a>
